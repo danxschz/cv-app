@@ -7,10 +7,13 @@ class EducationForm extends Component {
       <div>
         <h2>Education</h2>
         <form>
-          <Input type="text" id="school-name" labelText="School Name"/>
-          <Input type="text" id="major" labelText="Major"/>
-          <Input type="text" id="study-date" labelText="Study date range"/>
-          <button type="submit">Submit</button>
+          <Input id="degree" labelText="Degree / Qualification"/>
+          <Input id="institution-name" labelText="Institution"/>
+          <Input id="institution-location" labelText="Location"/>
+          <Input id="edu-start-date" labelText="Start Date"/>
+          <Input id="edu-end-date" labelText="End Date"/>
+          <Input id="gpa" labelText="GPA (if applicable)"/>
+          <button type="submit">Save Info</button>
         </form>
       </div>
     );

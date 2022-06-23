@@ -10,8 +10,8 @@ class ExperienceForm extends Component {
           <Input id="role" labelText="Role"/>
           <Input id="company-name" labelText="Company"/>
           <Input id="company-location" labelText="Location"/>
-          <Input id="start-date" labelText="Start Date"/>
-          <Input id="end-date" labelText="End Date"/>
+          <Input id="exp-start-date" labelText="Start Date"/>
+          <Input id="exp-end-date" labelText="End Date"/>
           <div className="input">
             <label htmlFor="role-description">Description</label>
             <textarea id="role-description" rows="5"></textarea>
