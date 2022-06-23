@@ -1,11 +1,13 @@
 import EducationForm from "./components/EducationForm";
-import PersonalForm from "./components/PersonalForm";
+import ExperienceForm from "./components/ExperienceForm";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
     <div className="App">
-      <PersonalForm/>
+      <ContactForm/>
       <EducationForm/>
+      <ExperienceForm/>
     </div>
   );
 }
