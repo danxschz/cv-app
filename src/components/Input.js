@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 
 class Input extends Component {
-  constructor(props) {
-    super(props);
-  
-    this.state = {value: ''};
-  }
-
   render () {
+    const { id, labelText, type, autocomplete, handleChange} = this.props;
+
     return (
       <div className="input">
-        <label htmlFor={this.props.id}>{this.props.labelText}</label>
-        <input type={this.props.type} id={this.props.id} autocomplete={this.props.autocomplete}/>
+        <label htmlFor={id}>{labelText}</label>
+        <input type={type} id={id} autocomplete={autocomplete} onChange={handleChange}/>
       </div>
     )
   }
