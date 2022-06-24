@@ -17,8 +17,18 @@ class App extends Component {
         personalWebsite: '',
         country: '',
         state: '',
-        city: ''
-      }
+        city: '',
+        experience: [
+          {
+            role: '',
+            companyName: '',
+            companyLocation: '',
+            roleStartDate: '',
+            roleEndDate: '',
+            roleDescription: '',
+          }
+        ],
+      },
     };
   }
 
@@ -31,11 +41,29 @@ class App extends Component {
     });
   };
 
+  handleExp = (e) => {
+    this.setState({
+      resume: {
+        ...this.state.resume,
+        experience:
+          this.state.resume.experience.map((a) => {
+            if (this.state.resume.experience.indexOf(a) === this.state.resume.experience.length - 1) {
+              a = {
+                ...this.state.resume.experience[this.state.resume.experience.length - 1],
+                [e.target.id]: e.target.value
+              }
+            }
+            return a
+          }),
+      },
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <ContactForm handleChange={this.handleChange}/>
-        <ExperienceForm/>
+        <ExperienceForm handleChange={this.handleExp}/>
         <EducationForm/>
         <Resume resume={this.state.resume}/>
       </div>

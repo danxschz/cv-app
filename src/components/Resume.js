@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Resume extends Component {
   render() {
-    const { fullName, email, phone, linkedIn, personalWebsite, country, state, city } = this.props.resume
+    const { fullName, email, phone, linkedIn, personalWebsite, country, state, city, experience } = this.props.resume
 
     return (
       <div className="resume">
@@ -13,6 +13,20 @@ class Resume extends Component {
           <div className="phone">{phone}</div>
           <div className="linkedin">{linkedIn}</div>
           <div className="website">{personalWebsite}</div>
+        </div>
+        <div className="experiences">
+          {experience.map((exp) => {
+            return (
+              <div className="experience">
+                <div>{exp.role}</div>
+                <div>{exp.companyName}</div>
+                <div>{exp.CompanyLocation}</div>
+                <div>{`${exp.roleStartDate} - ${exp.roleEndDate}`}</div>
+                <div>{exp.roleDescription}</div>
+              </div>
+            )
+          })}
+          {/*<div>{experience[0].role}</div>*/}
         </div>
       </div>
     );
