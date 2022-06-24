@@ -3,18 +3,20 @@ import Input from "./Input";
 
 class ContactForm extends Component {
   render() {
+    const { handleChange } = this.props
+
     return (
       <div>
         <h2>Contact</h2>
         <form>
-          <Input id="full-name" labelText="Full name" autocomplete="name"/>
-          <Input type="email" id="email" labelText="Email address" autocomplete="email"/>
-          <Input type="tel" id="phone" labelText="Phone number" autocomplete="tel"/>
-          <Input type="url" id="linkedin" labelText="LinkedIn URL"/>
-          <Input type="url" id="personal-website" labelText="Personal website"/>
-          <Input id="country" labelText="Country" autocomplete="country-name"/>
-          <Input id="state" labelText="State" autocomplete="address-level1"/>
-          <Input id="city" labelText="City" autocomplete="address-level2"/>
+          <Input labelText="Full name" id="fullName" autocomplete="name" handleChange={handleChange}/>
+          <Input type="email" labelText="Email address" id="email" autocomplete="email" handleChange={handleChange}/>
+          <Input type="tel" labelText="Phone number" id="phone" autocomplete="tel" handleChange={handleChange}/>
+          <Input type="url" labelText="LinkedIn URL" id="linkedIn" handleChange={handleChange}/>
+          <Input type="url" labelText="Personal website" id="personalWebsite" handleChange={handleChange}/>
+          <Input labelText="Country" id="country" autocomplete="country-name" handleChange={handleChange}/>
+          <Input labelText="State" id="state" autocomplete="address-level1" handleChange={handleChange}/>
+          <Input labelText="City" id="city" autocomplete="address-level2" handleChange={handleChange}/>
           <button type="submit">Save Info</button>
         </form>
       </div>
