@@ -14,19 +14,19 @@ class Resume extends Component {
           <div className="linkedin">{linkedIn}</div>
           <div className="website">{personalWebsite}</div>
         </div>
-        <div className="experiences">
+
+        <div className="experience">
           {experience.map((exp) => {
             return (
-              <div className="experience">
+              <div className="exp">
                 <div>{exp.role}</div>
                 <div>{exp.companyName}</div>
-                <div>{exp.CompanyLocation}</div>
+                <div>{exp.companyLocation}</div>
                 <div>{`${exp.roleStartDate} - ${exp.roleEndDate}`}</div>
                 <div>{exp.roleDescription}</div>
               </div>
             )
           })}
-          {/*<div>{experience[0].role}</div>*/}
         </div>
       </div>
     );
