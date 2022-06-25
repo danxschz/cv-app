@@ -18,7 +18,7 @@ class Resume extends Component {
         <div className="experience">
           {experience.map((exp) => {
             return (
-              <div className="exp">
+              <div key={experience.indexOf(exp)} className="exp">
                 <div>{exp.role}</div>
                 <div>{exp.companyName}</div>
                 <div>{exp.companyLocation}</div>

@@ -1,7 +1,7 @@
-import EducationForm from "./components/EducationForm";
-import ExperienceForm from "./components/ExperienceForm";
-import ContactForm from "./components/ContactForm";
 import { Component } from "react";
+import ContactForm from "./components/ContactForm";
+import ExperienceForm from "./components/ExperienceForm";
+import EducationForm from "./components/EducationForm";
 import Resume from "./components/Resume";
 
 class App extends Component {
@@ -53,19 +53,23 @@ class App extends Component {
     });
   };
 
-  handleExp = (e) => {
+  handleArrayChange = (e, arrayName) => {
+    const array = this.state.resume[arrayName];
+    const index = +e.target.attributes['data-index'].value;
+    const key = e.target.attributes['data-key'].value;
+
     this.setState({
       resume: {
         ...this.state.resume,
-        experience:
-          this.state.resume.experience.map((a) => {
-            if (this.state.resume.experience.indexOf(a) === this.state.resume.experience.length - 1) {
-              a = {
-                ...this.state.resume.experience[this.state.resume.experience.length - 1],
-                [e.target.id]: e.target.value
+        [arrayName]:
+          array.map((item) => {
+            if (array.indexOf(item) === index) {
+              item = {
+                ...array[index],
+                [key]: e.target.value,
               }
             }
-            return a
+            return item
           }),
       },
     });
@@ -75,7 +79,7 @@ class App extends Component {
     return (
       <div className="App">
         <ContactForm handleChange={this.handleChange}/>
-        <ExperienceForm handleChange={this.handleExp}/>
+        <ExperienceForm dataIndex="0" handleChange={(e) => this.handleArrayChange(e, 'experience')}/>
         <EducationForm/>
         <Resume resume={this.state.resume}/>
       </div>
