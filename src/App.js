@@ -27,6 +27,14 @@ class App extends Component {
             roleStartDate: 'January 2022',
             roleEndDate: 'Present',
             roleDescription: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
+          },
+          {
+            role: 'Software Engineer',
+            companyName: 'Company A',
+            companyLocation: 'Maracaibo, VE',
+            roleStartDate: 'January 2022',
+            roleEndDate: 'Present',
+            roleDescription: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
           }
         ],
 
@@ -76,10 +84,18 @@ class App extends Component {
   };
 
   render() {
+    const { experience } = this.state.resume;
+
     return (
       <div className="App">
         <ContactForm handleChange={this.handleChange}/>
-        <ExperienceForm dataIndex="0" handleChange={(e) => this.handleArrayChange(e, 'experience')}/>
+
+        {experience.map((exp) => {
+            return (
+              <ExperienceForm key={experience.indexOf(exp)} dataIndex={experience.indexOf(exp)} handleChange={(e) => this.handleArrayChange(e, 'experience')}/>
+            )
+        })}
+        
         <EducationForm/>
         <Resume resume={this.state.resume}/>
       </div>
