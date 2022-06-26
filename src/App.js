@@ -28,6 +28,7 @@ class App extends Component {
             roleEndDate: 'Present',
             roleDescription: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
           },
+
           {
             role: 'Software Engineer',
             companyName: 'Company A',
@@ -107,7 +108,7 @@ class App extends Component {
   }
 
   render() {
-    const { experience } = this.state.resume;
+    const { experience, education } = this.state.resume;
 
     return (
       <div className="App">
@@ -116,14 +117,23 @@ class App extends Component {
         <div>
           <h2>Experience</h2>
           <button onClick={() => this.addArrayItem('experience')}>Add</button>
-          {experience.map((exp) => {
+          {experience.map((item) => {
               return (
-                <ExperienceForm key={experience.indexOf(exp)} dataIndex={experience.indexOf(exp)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
+                <ExperienceForm key={experience.indexOf(item)} dataIndex={experience.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
               )
           })}
         </div>
 
-        <EducationForm/>
+        <div>
+          <h2>Education</h2>
+          <button onClick={() => this.addArrayItem('education')}>Add</button>
+          {education.map((item) => {
+              return (
+                <EducationForm key={education.indexOf(item)} dataIndex={education.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'education')} removeItem={this.removeArrayItem}/>
+              )
+          })}
+        </div>
+
         <Resume resume={this.state.resume}/>
       </div>
     );
