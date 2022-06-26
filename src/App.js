@@ -35,7 +35,8 @@ class App extends Component {
             roleStartDate: 'January 2022',
             roleEndDate: 'Present',
             roleDescription: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
-          }
+          },
+          {}
         ],
 
         education: [
@@ -95,7 +96,7 @@ class App extends Component {
               <ExperienceForm key={experience.indexOf(exp)} dataIndex={experience.indexOf(exp)} handleChange={(e) => this.handleArrayChange(e, 'experience')}/>
             )
         })}
-        
+
         <EducationForm/>
         <Resume resume={this.state.resume}/>
       </div>
