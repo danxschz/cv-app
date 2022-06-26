@@ -36,7 +36,6 @@ class App extends Component {
             roleEndDate: 'Present',
             roleDescription: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
           },
-          {}
         ],
 
         education: [
@@ -114,11 +113,15 @@ class App extends Component {
       <div className="App">
         <ContactForm handleChange={this.handleChange}/>
 
-        {experience.map((exp) => {
-            return (
-              <ExperienceForm key={experience.indexOf(exp)} dataIndex={experience.indexOf(exp)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
-            )
-        })}
+        <div>
+          <h2>Experience</h2>
+          <button onClick={() => this.addArrayItem('experience')}>Add</button>
+          {experience.map((exp) => {
+              return (
+                <ExperienceForm key={experience.indexOf(exp)} dataIndex={experience.indexOf(exp)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
+              )
+          })}
+        </div>
 
         <EducationForm/>
         <Resume resume={this.state.resume}/>

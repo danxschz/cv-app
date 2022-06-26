@@ -7,7 +7,6 @@ class ExperienceForm extends Component {
 
     return (
       <div>
-        <h2>Experience</h2>
         <form>
           <Input id={`role-${dataIndex + 1}`} labelText="Role" dataIndex={dataIndex} dataKey="role" handleChange={handleChange}/>
           <Input id={`companyName-${dataIndex + 1}`} labelText="Company" dataIndex={dataIndex} dataKey="companyName" handleChange={handleChange}/>
