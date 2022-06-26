@@ -84,6 +84,29 @@ class App extends Component {
     });
   };
 
+  addArrayItem = (arrayName) => {
+    this.setState({
+      resume: {
+        ...this.state.resume,
+        [arrayName]: [
+          ...this.state.resume[arrayName],
+          {}
+        ]
+      }
+    })
+  }
+
+  removeArrayItem = (arrayName, index) => {
+    this.setState({
+      resume: {
+        ...this.state.resume,
+        [arrayName]: this.state.resume[arrayName].filter((item) => {
+          return this.state.resume[arrayName].indexOf(item) !== index
+        }),
+      }
+    })
+  }
+
   render() {
     const { experience } = this.state.resume;
 
@@ -93,7 +116,7 @@ class App extends Component {
 
         {experience.map((exp) => {
             return (
-              <ExperienceForm key={experience.indexOf(exp)} dataIndex={experience.indexOf(exp)} handleChange={(e) => this.handleArrayChange(e, 'experience')}/>
+              <ExperienceForm key={experience.indexOf(exp)} dataIndex={experience.indexOf(exp)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
             )
         })}
 

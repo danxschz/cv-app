@@ -3,7 +3,7 @@ import Input from "./Input";
 
 class ExperienceForm extends Component {
   render() {
-    const { dataIndex, handleChange } = this.props
+    const { dataIndex, handleChange, removeItem } = this.props
 
     return (
       <div>
@@ -19,6 +19,7 @@ class ExperienceForm extends Component {
             <textarea id={`roleDescription-${dataIndex + 1}`} rows="5" data-index={dataIndex} data-key="roleDescription" onChange={handleChange}></textarea>
           </div>
         </form>
+        <button type="button" onClick={() => removeItem('experience', dataIndex)}>Remove</button>
       </div>
     );
   }
