@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import '../styles/Input.css';
+import { Component } from "react";
 
 class Input extends Component {
   render () {
-    const { id, labelText, type, autoComplete, dataIndex, dataKey, handleChange} = this.props;
+    const { id, labelText, type, autoComplete, dataIndex, dataKey, handleChange } = this.props;
 
     return (
       <div className="input">

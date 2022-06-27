@@ -1,0 +1,41 @@
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px 3vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form__heading {
+  display: flex;
+  gap: 12px;
+}
+
+.form__add-btn {
+  width: max-content;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  color: white;
+}
+
+.form__add-btn:hover {
+  opacity: 0.9;
+}
+
+.form__input-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

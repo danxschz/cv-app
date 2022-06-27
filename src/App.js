@@ -1,3 +1,4 @@
+import "./styles/App.css"
 import { Component } from "react";
 import ContactForm from "./components/ContactForm";
 import ExperienceForm from "./components/ExperienceForm";
@@ -111,27 +112,40 @@ class App extends Component {
     const { experience, education } = this.state.resume;
 
     return (
-      <div className="App">
-        <ContactForm handleChange={this.handleChange}/>
-
-        <div>
-          <h2>Experience</h2>
-          <button onClick={() => this.addArrayItem('experience')}>Add</button>
-          {experience.map((item) => {
-              return (
-                <ExperienceForm key={experience.indexOf(item)} dataIndex={experience.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
-              )
-          })}
-        </div>
-
-        <div>
-          <h2>Education</h2>
-          <button onClick={() => this.addArrayItem('education')}>Add</button>
-          {education.map((item) => {
-              return (
-                <EducationForm key={education.indexOf(item)} dataIndex={education.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'education')} removeItem={this.removeArrayItem}/>
-              )
-          })}
+      <div className="app">
+        <div className="forms">
+          <div className="form">
+            <div class="form__heading">
+              <h2>Contact</h2>
+            </div>
+            <ContactForm handleChange={this.handleChange}/>
+          </div>
+          <div className="form">
+            <div class="form__heading">
+              <h2>Experience</h2>
+              <button className="form__add-btn" onClick={() => this.addArrayItem('experience')}>Add</button>
+            </div>
+            <div class="form__input-groups">
+              {experience.map((item) => {
+                  return (
+                    <ExperienceForm key={experience.indexOf(item)} dataIndex={experience.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
+                  )
+              })}
+            </div>
+          </div>
+          <div className="form">
+            <div class="form__heading">
+              <h2>Education</h2>
+              <button className="form__add-btn" onClick={() => this.addArrayItem('education')}>Add</button>
+            </div>
+            <div class="form__input-groups">
+              {education.map((item) => {
+                  return (
+                    <EducationForm key={education.indexOf(item)} dataIndex={education.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'education')} removeItem={this.removeArrayItem}/>
+                  )
+              })}
+            </div>
+          </div>
         </div>
 
         <Resume resume={this.state.resume}/>
