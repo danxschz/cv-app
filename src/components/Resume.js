@@ -1,20 +1,24 @@
+import '../styles/Resume.css';
 import React, { Component } from "react";
 
 class Resume extends Component {
   render() {
-    const { fullName, email, phone, linkedIn, personalWebsite, country, state, city, experience, education } = this.props.resume
+    const { fullName, email, phone, linkedIn, personalWebsite, country, state, city, experience, education } = this.props.resume;
+    const location = [city, state, country];
+    const locationFiltered = location.filter((item) => item);
+    const locationString = locationFiltered.join(', '); 
 
     return (
       <div className="resume">
         <div className="name">{fullName}</div>
         <div className="contact">
-          <div className="location">{`${city}, ${state}, ${country}`}</div>
-          <div className="email">{email}</div>
-          <div className="phone">{phone}</div>
-          <div className="linkedin">{linkedIn}</div>
-          <div className="website">{personalWebsite}</div>
+          <div className="contact__info"><i class="fa-solid fa-location-dot"></i><span>{locationString}</span></div>
+          <div className="contact__info"><i class="fa-solid fa-envelope"></i><span>{email}</span></div>
+          <div className="contact__info"><i class="fa-solid fa-mobile-screen"></i><span>{phone}</span></div>
+          <div className="contact__info"><i class="fa-brands fa-linkedin"></i><span>{linkedIn}</span></div>
+          <div className="contact__info"><i class="fa-solid fa-link"></i><span>{personalWebsite}</span></div>
         </div>
-
+        <hr/>
         <div className="experience">
           {experience.map((exp) => {
             return (

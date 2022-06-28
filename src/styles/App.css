@@ -1,13 +1,15 @@
 .app {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: start;
+  padding: 20px 3vw;
+  gap: 2vw
 }
 
 .forms {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 20px 3vw;
 }
 
 .form {
