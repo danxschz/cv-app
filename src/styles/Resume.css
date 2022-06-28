@@ -42,3 +42,29 @@ hr {
   display: flex;
   gap: 4px;
 }
+
+.section__header {
+  border-bottom: 0.12em solid #000;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.35em;
+  letter-spacing: 0.05em;
+  font-size: 1.15em;
+}
+
+.item__header {
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.item__description {
+  font-size: 0.85em;
+  font-weight: 100;
+  line-height: 1.5em;
+}
+
+.item {
+  margin-bottom: 0.8em;
+}

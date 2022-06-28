@@ -20,28 +20,32 @@ class Resume extends Component {
         </div>
         <hr/>
         <div className="experience">
+          <div className="section__header">Experience</div>
           {experience.map((exp) => {
+            const descriptionItems = exp.roleDescription.split(';');
+            const descriptionParsed = descriptionItems.map((item) => {
+              if (descriptionItems.length > 1) return item = `• ${item.trim()}`
+              else return item
+            })
             return (
-              <div key={experience.indexOf(exp)} className="exp">
-                <div>{exp.role}</div>
-                <div>{exp.companyName}</div>
-                <div>{exp.companyLocation}</div>
-                <div>{`${exp.roleStartDate} - ${exp.roleEndDate}`}</div>
-                <div>{exp.roleDescription}</div>
+              <div key={experience.indexOf(exp)} className="item">
+                <div className='item__header'>{exp.role} | {exp.companyName} | {exp.companyLocation} | {`${exp.roleStartDate} - ${exp.roleEndDate}`}</div>
+                <div className='item__description'>
+                  {descriptionParsed.map((item) => {
+                    return <span>{item}<br/></span>
+                  })}
+                </div>
               </div>
             )
           })}
+          <hr/>
         </div>
-
         <div className="education">
+          <div className="section__header">Education</div>
           {education.map((item) => {
             return (
-              <div key={education.indexOf(item)} className="edu">
-                <div>{item.degree}</div>
-                <div>{item.schoolName}</div>
-                <div>{item.schoolLocation}</div>
-                <div>{`${item.eduStartDate} - ${item.eduEndDate}`}</div>
-                <div>{item.gpa}</div>
+              <div key={education.indexOf(item)} className="item">
+                <div className="item__header">{item.degree} | {item.schoolName} | {item.schoolLocation} | {`${item.eduStartDate} - ${item.eduEndDate}`} | {item.gpa}</div>
               </div>
             )
           })}
