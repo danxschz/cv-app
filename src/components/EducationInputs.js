@@ -10,8 +10,8 @@ class EducationInputs extends Component {
         <Input id={`degree-${dataIndex + 1}`} labelText="Degree / Qualification" dataIndex={dataIndex} dataKey="degree" handleChange={handleChange}/>
         <Input id={`schoolName-${dataIndex + 1}`} labelText="Institution" dataIndex={dataIndex} dataKey="schoolName" handleChange={handleChange}/>
         <Input id={`schoolLocation-${dataIndex + 1}`} labelText="Location" dataIndex={dataIndex} dataKey="schoolLocation" handleChange={handleChange}/>
-        <Input id={`eduStartDate-${dataIndex + 1}`} labelText="Start Date" dataIndex={dataIndex} dataKey="eduStartDate" handleChange={handleChange}/>
-        <Input id={`eduEndDate-${dataIndex + 1}`} labelText="End Date" dataIndex={dataIndex} dataKey="eduEndDate" handleChange={handleChange}/>
+        <Input id={`eduStartDate-${dataIndex + 1}`} labelText="Start Date" dataIndex={dataIndex} dataKey="startDate" handleChange={handleChange}/>
+        <Input id={`eduEndDate-${dataIndex + 1}`} labelText="End Date" dataIndex={dataIndex} dataKey="endDate" handleChange={handleChange}/>
         <Input id={`gpa-${dataIndex + 1}`} labelText="GPA (if applicable)" dataIndex={dataIndex} dataKey="gpa" handleChange={handleChange}/>
         <button type="button" className="form__remove-btn" onClick={() => removeArrayItem('education', dataIndex)}>Remove</button>
       </form>

@@ -24,13 +24,13 @@ class Resume extends Component {
         <div className="section">
           <div className="section__header">Experience</div>
           {experience.map((item) => {
-            const description = (item.roleDescription) ? item.roleDescription.split('\n') : [];
+            const description = (item.description) ? item.description.split('\n') : [];
             const descriptionItems = description.map((item) => {
               if (description.length > 1) return item = `• ${item.trim()}`
               else return item
             })
 
-            const timeFrame = [item.roleStartDate, item.roleEndDate];
+            const timeFrame = [item.startDate, item.endDate];
             const timeFrameAvailable = timeFrame.filter((item) => item);
             const timeFrameString = timeFrameAvailable.join(' - ');
 
@@ -51,7 +51,7 @@ class Resume extends Component {
         <div className="section">
           <div className="section__header">Education</div>
           {education.map((item) => {
-            const timeFrame = [item.eduStartDate, item.eduEndDate];
+            const timeFrame = [item.startDate, item.endDate];
             const timeFrameAvailable = timeFrame.filter((item) => item);
             const timeFrameString = timeFrameAvailable.join(' - ');
             return (
