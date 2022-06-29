@@ -1,4 +1,3 @@
-import '../styles/form.css'
 import { Component } from 'react';
 import Input from './Input';
 

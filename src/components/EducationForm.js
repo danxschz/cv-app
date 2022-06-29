@@ -1,3 +1,4 @@
+import '../styles/form.css'
 import { Component } from 'react';
 import EducationInputs from './EducationInputs.js';
 

@@ -1,3 +1,4 @@
+import '../styles/form.css'
 import { Component } from 'react';
 import ContactInputs from './ContactInputs.js';
 
@@ -7,7 +8,7 @@ class ContactForm extends Component {
 
     return (
       <div className="form">
-        <div class="form__heading">
+        <div className="form__heading">
           <h2>Contact</h2>
         </div>
         <ContactInputs handleChange={handleChange}/>
