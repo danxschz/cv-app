@@ -1,23 +1,24 @@
-import React, { Component } from "react";
-import Input from "./Input";
+import { Component } from 'react';
+import ExperienceInputs from './ExperienceInputs.js';
 
 class ExperienceForm extends Component {
   render() {
-    const { dataIndex, handleChange, removeItem } = this.props
+    const { addArrayItem, experience, handleArrayChange, removeArrayItem } = this.props
 
     return (
-      <form className="form__inputs">
-        <Input id={`role-${dataIndex + 1}`} labelText="Role" dataIndex={dataIndex} dataKey="role" handleChange={handleChange}/>
-        <Input id={`companyName-${dataIndex + 1}`} labelText="Company" dataIndex={dataIndex} dataKey="companyName" handleChange={handleChange}/>
-        <Input id={`companyLocation-${dataIndex + 1}`} labelText="Location" dataIndex={dataIndex} dataKey="companyLocation" handleChange={handleChange}/>
-        <Input id={`roleStartDate-${dataIndex + 1}`} labelText="Start Date" dataIndex={dataIndex} dataKey="roleStartDate" handleChange={handleChange}/>
-        <Input id={`roleEndDate-${dataIndex + 1}`} labelText="End Date" dataIndex={dataIndex} dataKey="roleEndDate" handleChange={handleChange}/>
-        <div className="input">
-          <label htmlFor={`roleDescription-${dataIndex + 1}`}>Description</label>
-          <textarea id={`roleDescription-${dataIndex + 1}`} rows="5" data-index={dataIndex} data-key="roleDescription" onChange={handleChange}></textarea>
+      <div className="form">
+        <div class="form__heading">
+          <h2>Experience</h2>
+          <button className="form__add-btn" onClick={() => addArrayItem('experience')}>Add</button>
         </div>
-        <button type="button" className="form__remove-btn" onClick={() => removeItem('experience', dataIndex)}>Remove</button>
-      </form>
+        <div class="form__input-groups">
+          {experience.map((item) => {
+              return (
+                <ExperienceInputs key={experience.indexOf(item)} dataIndex={experience.indexOf(item)} handleChange={(e) => handleArrayChange(e, 'experience')} removeArrayItem={removeArrayItem}/>
+              )
+          })}
+        </div>
+      </div>
     );
   }
 }

@@ -1,8 +1,8 @@
-import "./styles/App.css"
+import './styles/App.css'
 import { Component } from 'react';
 import resumeExample from './resumeExample';
 import ContactForm from './components/ContactForm';
-import ExperienceForm from "./components/ExperienceForm";
+import ExperienceForm from './components/ExperienceForm';
 import EducationForm from "./components/EducationForm";
 import Resume from "./components/Resume";
 
@@ -70,25 +70,13 @@ class App extends Component {
   }
 
   render() {
-    const { experience, education } = this.state.resume;
+    const { education } = this.state.resume;
 
     return (
       <div className="app">
         <div className="forms">
           <ContactForm handleChange={this.handleChange}/>
-          <div className="form">
-            <div class="form__heading">
-              <h2>Experience</h2>
-              <button className="form__add-btn" onClick={() => this.addArrayItem('experience')}>Add</button>
-            </div>
-            <div class="form__input-groups">
-              {experience.map((item) => {
-                  return (
-                    <ExperienceForm key={experience.indexOf(item)} dataIndex={experience.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'experience')} removeItem={this.removeArrayItem}/>
-                  )
-              })}
-            </div>
-          </div>
+          <ExperienceForm addArrayItem={this.addArrayItem} experience={this.state.resume.experience} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
           <div className="form">
             <div class="form__heading">
               <h2>Education</h2>
