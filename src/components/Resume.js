@@ -1,37 +1,44 @@
 import '../styles/Resume.css';
-import React, { Component } from "react";
+import { Component } from 'react';
 
 class Resume extends Component {
   render() {
-    const { fullName, email, phone, linkedIn, personalWebsite, country, state, city, experience, education } = this.props.resume;
+    const { name, email, phone, linkedIn, website, country, state, city, experience, education } = this.props.resume;
+
     const location = [city, state, country];
-    const locationFiltered = location.filter((item) => item);
-    const locationString = locationFiltered.join(', '); 
+    const locationAvailable = location.filter((item) => item);
+    const locationString = locationAvailable.join(', ');
 
     return (
       <div className="resume">
-        <div className="name">{fullName}</div>
+        <div className="name">{name}</div>
         <div className="contact">
           <div className="contact__info"><i class="fa-solid fa-location-dot"></i><span>{locationString}</span></div>
           <div className="contact__info"><i class="fa-solid fa-envelope"></i><span>{email}</span></div>
           <div className="contact__info"><i class="fa-solid fa-mobile-screen"></i><span>{phone}</span></div>
-          <div className="contact__info"><i class="fa-brands fa-linkedin"></i><span>{linkedIn}</span></div>
-          <div className="contact__info"><i class="fa-solid fa-link"></i><span>{personalWebsite}</span></div>
+          {linkedIn ? <div className="contact__info"><i class="fa-brands fa-linkedin"></i><span>{linkedIn}</span></div> : null}
+          {website ? <div className="contact__info"><i class="fa-solid fa-link"></i><span>{website}</span></div> : null}
         </div>
         <hr/>
-        <div className="experience">
+
+        <div className="section">
           <div className="section__header">Experience</div>
-          {experience.map((exp) => {
-            const descriptionItems = exp.roleDescription.split(';');
-            const descriptionParsed = descriptionItems.map((item) => {
-              if (descriptionItems.length > 1) return item = `• ${item.trim()}`
+          {experience.map((item) => {
+            const description = (item.roleDescription) ? item.roleDescription.split('\n') : [];
+            const descriptionItems = description.map((item) => {
+              if (description.length > 1) return item = `• ${item.trim()}`
               else return item
             })
+
+            const timeFrame = [item.roleStartDate, item.roleEndDate];
+            const timeFrameAvailable = timeFrame.filter((item) => item);
+            const timeFrameString = timeFrameAvailable.join(' - ');
+
             return (
-              <div key={experience.indexOf(exp)} className="item">
-                <div className='item__header'>{exp.role} | {exp.companyName} | {exp.companyLocation} | {`${exp.roleStartDate} - ${exp.roleEndDate}`}</div>
+              <div key={experience.indexOf(item)} className="item">
+                <div className='item__header'>{item.role} | {item.companyName} | {item.companyLocation} | {timeFrameString}</div>
                 <div className='item__description'>
-                  {descriptionParsed.map((item) => {
+                  {descriptionItems.map((item) => {
                     return <span>{item}<br/></span>
                   })}
                 </div>
@@ -40,12 +47,16 @@ class Resume extends Component {
           })}
           <hr/>
         </div>
-        <div className="education">
+
+        <div className="section">
           <div className="section__header">Education</div>
           {education.map((item) => {
+            const timeFrame = [item.eduStartDate, item.eduEndDate];
+            const timeFrameAvailable = timeFrame.filter((item) => item);
+            const timeFrameString = timeFrameAvailable.join(' - ');
             return (
               <div key={education.indexOf(item)} className="item">
-                <div className="item__header">{item.degree} | {item.schoolName} | {item.schoolLocation} | {`${item.eduStartDate} - ${item.eduEndDate}`} | {item.gpa}</div>
+                <div className="item__header">{item.degree} | {item.schoolName} | {item.schoolLocation} | {timeFrameString} {item.gpa ? ` | ${item.gpa}`: null}</div>
               </div>
             )
           })}

@@ -1,9 +1,9 @@
 const resumeExample = {
-  fullName: 'John Doeman',
+  name: 'John Doeman',
   email: 'doeman@gmail.com',
   phone: '+58 123 4567890',
   linkedIn: 'in/doeman',
-  personalWebsite: 'johndoe.com',
+  website: 'johndoe.com',
   country: 'Venezuela',
   state: 'Zulia',
   city: 'Maracaibo',
