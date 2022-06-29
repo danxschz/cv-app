@@ -70,28 +70,17 @@ class App extends Component {
   }
 
   render() {
-    const { education } = this.state.resume;
-
+    const { experience, education} = this.state.resume;
     return (
       <div className="app">
-        <div className="forms">
-          <ContactForm handleChange={this.handleChange}/>
-          <ExperienceForm addArrayItem={this.addArrayItem} experience={this.state.resume.experience} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
-          <div className="form">
-            <div class="form__heading">
-              <h2>Education</h2>
-              <button className="form__add-btn" onClick={() => this.addArrayItem('education')}>Add</button>
-            </div>
-            <div class="form__input-groups">
-              {education.map((item) => {
-                  return (
-                    <EducationForm key={education.indexOf(item)} dataIndex={education.indexOf(item)} handleChange={(e) => this.handleArrayChange(e, 'education')} removeItem={this.removeArrayItem}/>
-                  )
-              })}
-            </div>
+        <main>
+          <div className="forms">
+            <ContactForm handleChange={this.handleChange}/>
+            <ExperienceForm addArrayItem={this.addArrayItem} experience={experience} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
+            <EducationForm addArrayItem={this.addArrayItem} education={education} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
           </div>
-        </div>
-        <Resume resume={this.state.resume}/>
+          <Resume resume={this.state.resume}/>
+        </main>
       </div>
     );
   }

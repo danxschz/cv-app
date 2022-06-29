@@ -1,20 +1,24 @@
-import React, { Component } from "react";
-import Input from "./Input";
+import { Component } from 'react';
+import EducationInputs from './EducationInputs.js';
 
 class EducationForm extends Component {
   render() {
-    const { dataIndex, handleChange, removeItem } = this.props
+    const { addArrayItem, education, handleArrayChange, removeArrayItem } = this.props
 
     return (
-      <form className="form__inputs">
-        <Input id={`degree-${dataIndex + 1}`} labelText="Degree / Qualification" dataIndex={dataIndex} dataKey="degree" handleChange={handleChange}/>
-        <Input id={`schoolName-${dataIndex + 1}`} labelText="Institution" dataIndex={dataIndex} dataKey="schoolName" handleChange={handleChange}/>
-        <Input id={`schoolLocation-${dataIndex + 1}`} labelText="Location" dataIndex={dataIndex} dataKey="schoolLocation" handleChange={handleChange}/>
-        <Input id={`eduStartDate-${dataIndex + 1}`} labelText="Start Date" dataIndex={dataIndex} dataKey="eduStartDate" handleChange={handleChange}/>
-        <Input id={`eduEndDate-${dataIndex + 1}`} labelText="End Date" dataIndex={dataIndex} dataKey="eduEndDate" handleChange={handleChange}/>
-        <Input id={`gpa-${dataIndex + 1}`} labelText="GPA (if applicable)" dataIndex={dataIndex} dataKey="gpa" handleChange={handleChange}/>
-        <button type="button" className="form__remove-btn" onClick={() => removeItem('education', dataIndex)}>Remove</button>
-      </form>
+      <div className="form">
+        <div className="form__heading">
+          <h2>Education</h2>
+          <button className="form__add-btn" onClick={() => addArrayItem('education')}>Add</button>
+        </div>
+        <div className="form__input-groups">
+          {education.map((item) => {
+              return (
+                <EducationInputs key={education.indexOf(item)} dataIndex={education.indexOf(item)} handleChange={(e) => handleArrayChange(e, 'education')} removeArrayItem={removeArrayItem}/>
+              )
+          })}
+        </div>
+      </div>
     );
   }
 }
