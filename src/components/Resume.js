@@ -3,7 +3,7 @@ import { Component } from 'react';
 
 class Resume extends Component {
   render() {
-    const { name, email, phone, linkedIn, website, country, state, city, experience, education } = this.props.resume;
+    const { name, email, phone, linkedIn, website, country, state, city, summary, experience, education } = this.props.resume;
 
     const location = [city, state, country];
     const locationAvailable = location.filter((item) => item);
@@ -13,13 +13,19 @@ class Resume extends Component {
       <div className="resume">
         <div className="name">{name}</div>
         <div className="contact">
-          <div className="contact__info"><i class="fa-solid fa-location-dot"></i><span>{locationString}</span></div>
-          <div className="contact__info"><i class="fa-solid fa-envelope"></i><span>{email}</span></div>
-          <div className="contact__info"><i class="fa-solid fa-mobile-screen"></i><span>{phone}</span></div>
-          {linkedIn ? <div className="contact__info"><i class="fa-brands fa-linkedin"></i><span>{linkedIn}</span></div> : null}
-          {website ? <div className="contact__info"><i class="fa-solid fa-link"></i><span>{website}</span></div> : null}
+          <div className="contact__info"><i className="fa-solid fa-location-dot"></i><span>{locationString}</span></div>
+          <div className="contact__info"><i className="fa-solid fa-envelope"></i><span>{email}</span></div>
+          <div className="contact__info"><i className="fa-solid fa-mobile-screen"></i><span>{phone}</span></div>
+          {linkedIn ? <div className="contact__info"><i className="fa-brands fa-linkedin"></i><span>{linkedIn}</span></div> : null}
+          {website ? <div className="contact__info"><i className="fa-solid fa-link"></i><span>{website}</span></div> : null}
         </div>
         <hr/>
+
+        <div className="section">
+          <div className="section__header">Summary</div>
+          <div className="item__description">{summary}</div>
+          <hr/>
+        </div>
 
         <div className="section">
           <div className="section__header">Experience</div>

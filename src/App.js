@@ -2,6 +2,7 @@ import './styles/App.css'
 import { Component } from 'react';
 import resumeExample from './resumeExample';
 import ContactForm from './components/ContactForm';
+import SummaryForm from './components/SummaryForm';
 import ExperienceForm from './components/ExperienceForm';
 import EducationForm from "./components/EducationForm";
 import Resume from "./components/Resume";
@@ -76,6 +77,7 @@ class App extends Component {
         <main>
           <div className="forms">
             <ContactForm handleChange={this.handleChange}/>
+            <SummaryForm handleChange={this.handleChange}/>
             <ExperienceForm addArrayItem={this.addArrayItem} experience={experience} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
             <EducationForm addArrayItem={this.addArrayItem} education={education} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
           </div>

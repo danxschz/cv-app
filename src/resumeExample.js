@@ -5,9 +5,9 @@ const resumeExample = {
   linkedIn: 'in/doeman',
   website: 'johndoe.com',
   country: 'Venezuela',
-  state: 'ZU',
+  state: 'Zulia',
   city: 'Maracaibo',
-  summary: 'Civil engineer with 5 years of experience in the construction and design of residential, commercial, and industrial buildings. Proven ability to manage large teams, budgets and multiple projects. Seeking a career advancement opportunity as a Project Manager at Company A.',
+  summary: 'Civil engineer with 3 years of experience in the construction and design of residential, commercial, and industrial buildings. Proven ability to manage large teams, budgets and multiple projects. Seeking a career advancement opportunity as a Project Manager at Company A.',
 
   experience: [
     {
