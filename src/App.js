@@ -1,6 +1,7 @@
 import "./styles/App.css"
-import { Component } from "react";
-import ContactForm from "./components/ContactForm";
+import { Component } from 'react';
+import resumeExample from './resumeExample';
+import ContactForm from './components/ContactForm';
 import ExperienceForm from "./components/ExperienceForm";
 import EducationForm from "./components/EducationForm";
 import Resume from "./components/Resume";
@@ -10,47 +11,7 @@ class App extends Component {
     super();
 
     this.state = {
-      resume: {
-        fullName: 'John Doeman',
-        email: 'doeman@gmail.com',
-        phone: '+58 123 4567890',
-        linkedIn: 'in/doeman',
-        personalWebsite: 'johndoe.com',
-        country: 'Venezuela',
-        state: 'Zulia',
-        city: 'Maracaibo',
-
-        experience: [
-          {
-            role: 'Software Engineer',
-            companyName: 'Company A',
-            companyLocation: 'Maracaibo, VE',
-            roleStartDate: 'January 2022',
-            roleEndDate: 'Present',
-            roleDescription: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
-          },
-
-          {
-            role: 'Software Engineer',
-            companyName: 'Company A',
-            companyLocation: 'Maracaibo, VE',
-            roleStartDate: 'January 2022',
-            roleEndDate: 'Present',
-            roleDescription: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
-          },
-        ],
-
-        education: [
-          {
-            degree: 'CS50: Introduction to Computer Science',
-            schoolName: 'Harvard University',
-            schoolLocation: 'Cambridge, Massachusetts',
-            eduStartDate: '2020',
-            eduEndDate: 'Present',
-            gpa: '4.1',
-          }
-        ],
-      },
+      resume: resumeExample
     };
   }
 
@@ -114,12 +75,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="forms">
-          <div className="form">
-            <div class="form__heading">
-              <h2>Contact</h2>
-            </div>
-            <ContactForm handleChange={this.handleChange}/>
-          </div>
+          <ContactForm handleChange={this.handleChange}/>
           <div className="form">
             <div class="form__heading">
               <h2>Experience</h2>
@@ -147,7 +103,6 @@ class App extends Component {
             </div>
           </div>
         </div>
-
         <Resume resume={this.state.resume}/>
       </div>
     );

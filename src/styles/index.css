@@ -1,14 +1,13 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 /* Variables */
 :root {
   --primary-color: #fbfbfb;
+  --accent-color: #3c78d8ff;
   --text-color: #272624;
   --system-font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
-  --accent-color: #3c78d8ff;
 }
 
 /* General rules */
@@ -24,10 +23,6 @@ body {
 }
 
 h1, h2 {
-  margin: 0;
-}
-
-p {
   margin: 0;
 }
 
