@@ -27,6 +27,15 @@ const resumeExample = {
       endDate: 'June 2020',
       description: "Completed Revit information details of a 15-story building BIM project using COBie and other add-on programs.\nIdentified issues with a Revit add-on program developed by the company for determining component addresses using rooms, devised and applied a solution with the developer by changing the room association mechanism.",
     },
+
+    {
+      role: 'Research Intern',
+      companyName: 'Company C',
+      companyLocation: 'Maracaibo, VE',
+      startDate: 'June 2018',
+      endDate: 'June 2019',
+      description: "Researched and compiled comprehensive information about Country Ws healthcare system and market, confirming Country Bas a viable health tourism customer source for Country A.\nInitiated and facilitated cooperation between 2 major hospitals In Country B and Consultancy Company.",
+    },
   ],
 
   education: [
