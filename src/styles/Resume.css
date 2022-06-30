@@ -1,17 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
+.resume-section {
+  position: sticky;
+  top: 20px;
+}
+
+.resume-border {
+  padding: 10px;
+  background: #e7e7e7;
+}
+
 .resume {
   display: flex;
   flex-direction: column;
   width: 22cm;
   height: 28cm;
   padding: 1.3cm 1.4cm 1.3cm 1.4cm;
-  border: 10px solid #e7e7e7;
+  background: white;
   font-family: 'Merriweather', serif;
   font-size: 9.5pt;
   color: #2e3d50;
-  position: sticky;
-  top: 20px;
 }
 
 .name {
@@ -67,4 +75,8 @@ hr {
   font-size: 0.85em;
   font-weight: 100;
   line-height: 1.5em;
+}
+
+.download-btn {
+
 }

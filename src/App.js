@@ -6,7 +6,7 @@ import ContactForm from './components/ContactForm';
 import SummaryForm from './components/SummaryForm';
 import ExperienceForm from './components/ExperienceForm';
 import EducationForm from "./components/EducationForm";
-import Resume from "./components/Resume";
+import PrintableResume from './components/PrintableResume';
 
 class App extends Component {
   constructor() {
@@ -83,7 +83,7 @@ class App extends Component {
             <ExperienceForm addArrayItem={this.addArrayItem} experience={experience} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
             <EducationForm addArrayItem={this.addArrayItem} education={education} handleArrayChange={this.handleArrayChange} removeArrayItem={this.removeArrayItem}/>
           </div>
-          <Resume resume={this.state.resume}/>
+          <PrintableResume resume={this.state.resume}/>
         </main>
       </div>
     );
