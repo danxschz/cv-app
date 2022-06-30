@@ -13,7 +13,7 @@ class ExperienceInputs extends Component {
         <Input id={`roleStartDate-${dataIndex + 1}`} labelText="Start Date" dataIndex={dataIndex} dataKey="startDate" handleChange={handleChange}/>
         <Input id={`roleEndDate-${dataIndex + 1}`} labelText="End Date" dataIndex={dataIndex} dataKey="endDate" handleChange={handleChange}/>
         <div className="input">
-          <label htmlFor={`roleDescription-${dataIndex + 1}`}>Description (press enter to break into a bullet)</label>
+          <label htmlFor={`roleDescription-${dataIndex + 1}`}>Description (press enter to create a bullet point)</label>
           <textarea id={`roleDescription-${dataIndex + 1}`} rows="5" data-index={dataIndex} data-key="description" onChange={handleChange}></textarea>
         </div>
         <button type="button" className="form__remove-btn" onClick={() => removeArrayItem('experience', dataIndex)}>Remove</button>

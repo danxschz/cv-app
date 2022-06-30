@@ -6,7 +6,8 @@ class Header extends Component {
     return (
       <header>
         <div className="title">
-          <h1>Vitae</h1>
+          {/* eslint-disable-next-line*/}
+          <h1><a href="">Vitae</a></h1>
           <div>Resume builder</div>
         </div>
         <a href="https://github.com/danxschz" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>

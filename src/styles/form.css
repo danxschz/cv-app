@@ -22,6 +22,10 @@
   opacity: 0.9;
 }
 
+.form__add-btn:active, .form__remove-btn:active {
+  opacity: 0.8;
+}
+
 .form__input-groups {
   display: flex;
   flex-direction: column;
@@ -38,6 +42,10 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+input, textarea {
+  outline-color: var(--accent-color);
 }
 
 .form__remove-btn {
