@@ -29,7 +29,7 @@ class Resume extends Component {
 
         <div className="section">
           <div className="section__header">Experience</div>
-          {experience.map((item) => {
+          {experience.map((item, i) => {
             const description = (item.description) ? item.description.split('\n') : [];
             const descriptionItems = description.map((item) => {
               if (description.length > 1) return item = `• ${item.trim()}`
@@ -41,11 +41,11 @@ class Resume extends Component {
             const timeFrameString = timeFrameAvailable.join(' - ');
 
             return (
-              <div key={experience.indexOf(item)} className="item">
+              <div key={i} className="item">
                 <div className='item__header'>{item.role} | {item.companyName} | {item.companyLocation} | {timeFrameString}</div>
                 <div className='item__description'>
-                  {descriptionItems.map((item) => {
-                    return <span>{item}<br/></span>
+                  {descriptionItems.map((item, i) => {
+                    return <span key={i}>{item}<br/></span>
                   })}
                 </div>
               </div>
@@ -56,12 +56,13 @@ class Resume extends Component {
 
         <div className="section">
           <div className="section__header">Education</div>
-          {education.map((item) => {
+          {education.map((item, i) => {
             const timeFrame = [item.startDate, item.endDate];
             const timeFrameAvailable = timeFrame.filter((item) => item);
             const timeFrameString = timeFrameAvailable.join(' - ');
+
             return (
-              <div key={education.indexOf(item)} className="item">
+              <div key={i} className="item">
                 <div className="item__header">{item.degree} | {item.schoolName} | {item.schoolLocation} | {timeFrameString} {item.gpa ? ` | ${item.gpa}`: null}</div>
               </div>
             )
