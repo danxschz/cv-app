@@ -16,6 +16,7 @@
   width: max-content;
   background: var(--accent-color);
   color: white;
+  font-weight: 500;
 }
 
 .form__add-btn:hover, .form__remove-btn:hover {
@@ -45,6 +46,9 @@
 }
 
 input, textarea {
+  padding: 4px;
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
   outline-color: var(--accent-color);
 }
 
