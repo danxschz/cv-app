@@ -1,0 +1,38 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 3vw;
+  background: var(--accent-color);
+  color: white;
+}
+
+header a {
+  color: white
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.title h1 {
+  letter-spacing: 5px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.title div {
+  font-size: 0.98rem;
+  font-weight: 300;
+}
+
+.fa-github {
+  font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}

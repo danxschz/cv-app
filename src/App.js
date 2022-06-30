@@ -1,6 +1,7 @@
 import './styles/App.css'
 import { Component } from 'react';
 import resumeExample from './resumeExample';
+import Header from './components/Header';
 import ContactForm from './components/ContactForm';
 import SummaryForm from './components/SummaryForm';
 import ExperienceForm from './components/ExperienceForm';
@@ -74,6 +75,7 @@ class App extends Component {
     const { experience, education} = this.state.resume;
     return (
       <div className="app">
+        <Header/>
         <main>
           <div className="forms">
             <ContactForm handleChange={this.handleChange}/>
