@@ -30,7 +30,7 @@
 ## About the Project
 
 <div align="center"> 
-  <img src="screenshots/resume-example.png" alt="resume example" width="700" height="auto"/>
+  <img src="screenshots/resume-example.png" alt="resume example" width="600" height="auto"/>
 </div>
 
 ### Built With
