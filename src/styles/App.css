@@ -1,9 +1,9 @@
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   padding: 32px 3vw;
   align-items: start;
-  gap: 2vw
+  gap: 2vw;
 }
 
 .forms {

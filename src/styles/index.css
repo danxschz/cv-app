@@ -3,8 +3,7 @@
 
 /* Variables */
 :root {
-  --primary-color: #fbfbfb;
-  --accent-color: #3c78d8ff;
+  --accent-color: #3c78d8;
   --text-color: #272624;
   --system-font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
