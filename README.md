@@ -29,6 +29,8 @@
 
 ## About the Project
 
+### Resume Example
+
 <div align="center"> 
   <img src="screenshots/resume-example.png" alt="resume example" width="600" height="auto"/>
 </div>
